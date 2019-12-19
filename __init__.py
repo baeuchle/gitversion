@@ -30,8 +30,8 @@ class Git:
             result += line
         return result.strip()
 
-    def describe(self):
-        return self._gitoutput('describe', '--always')
+    def describe(self, *additional_args):
+        return self._gitoutput('describe', '--always', *additional_args)
 
     def hash(self, *args):
         return self._gitoutput('log', '--pretty=%H', '-1', *args)
