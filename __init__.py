@@ -48,3 +48,6 @@ class Git:
                 continue
             result += '•' + trimmed[9:] + '\n'
         return result
+
+    def topdir(self):
+        return self._gitoutput('rev-parse', '--show-toplevel')
